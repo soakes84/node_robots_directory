@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Single Robot</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header id="header">
+    </header>
+    <main>
+      <div class = "single-robot">
+        <div class = "top-left">
+          <img src="{{avatar}}" class = "round">
+        </div>
+        <div class = "top-right">
+          <h1>{{name}}</h1>
+          {{#job}}
+          <p>{{#address.city}}{{address.city}}, {{/address.city}}{{address.country}} | {{job}}, {{company}}</p>
+          {{/job}}
+          {{^job}}
+          <p>{{#address.city}}{{address.city}}, {{/address.city}}{{address.country}} | <span>Available For Hire</span></p>
+          {{/job}}
+          <p>{{email}} | {{phone}}</p>
+        </div>
+        <div class = "bottom-left">
+          {{#university}}<p>Education</p>{{/university}}
+          <p>Skills</p>
+        </div>
+        <div class = "bottom-right">
+          {{#university}}<p>{{university}}</p>{{/university}}
+          {{#skills}}
+          <p>{{.}}</p>
+          {{/skills}}
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
